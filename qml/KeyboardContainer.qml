@@ -71,11 +71,6 @@ Item {
         anchors.fill: parent
     }
 
-    Magnifier {
-        id: magnifier
-        shown: false
-    }
-
     states: [
         State {
             name: "CHARACTERS"

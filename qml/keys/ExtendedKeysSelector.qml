@@ -77,6 +77,10 @@ KeyPopover {
         canvas.extendedKeysShown = enabled
     }
 
+    onCurrentlyAssignedKeyChanged: {
+        popoverBackground.repositionToItem(currentlyAssignedKey);
+    }
+
     Rectangle {
         id: popoverBackground
 
@@ -103,6 +107,15 @@ KeyPopover {
         border {
             width: tip.background.border.width
             color: tip.background.border.color
+        }
+
+        function repositionToItem(item) {
+            if (item == null) {
+                return;
+            }
+            var point = popover.mapFromItem(item, item.x, item.y);
+            anchorItem.x = item.x + item.parent.x;
+            anchorItem.y = point.y - panel.keyHeight;
         }
 
         onXChanged: {

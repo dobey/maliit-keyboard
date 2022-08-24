@@ -89,9 +89,6 @@ KeyPad {
 
         function updateRecent(emoji) {
             internal.loading = false;
-            // Hide the magnifier before we reposition the key
-            magnifier.shown = false;
-            magnifier.currentlyAssignedKey = null;
             var originalLength = recentEmoji.length;
             var position = recentEmoji.indexOf(emoji);
             c1.positionBeforeInsertion = c1.contentX;
@@ -154,10 +151,6 @@ KeyPad {
         cellWidth: fullScreenItem.landscape ? panel.keyWidth * 0.7 : panel.keyWidth
         cellHeight: panel.keyHeight
         cacheBuffer: Device.gu(30)
-        onContentXChanged: {
-            magnifier.shown = false;
-            magnifier.currentlyAssignedKey = null;
-        }
         onContentWidthChanged: {
             // Shift view to compensate for new emoji being added
             // But only if the view has actually moved (GridView's
@@ -176,13 +169,13 @@ KeyPad {
         Component {
             id: charDelegate
             CharKey {
+                id: emojiKey
                 property var emoji: null
                 visible: label != ""
                 label: emoji != null ? emoji.char : ""
                 shifted: label
                 fontFamily: "Noto Color Emoji"
                 fontSize: height / 2
-                noMagnifier: true
                 onKeySent: {
                     internal.updateRecent(key);
                 }

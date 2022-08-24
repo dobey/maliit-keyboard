@@ -26,22 +26,6 @@ Item {
     property Item currentlyAssignedKey
     property alias anchorItem: __anchorItem
 
-    property int currentlyAssignedKeyParentY: currentlyAssignedKey != null ? currentlyAssignedKey.parent.y : 0
-    property int currentlyAssignedKeyX: currentlyAssignedKey != null ? currentlyAssignedKey.x : 0
-    property int currentlyAssignedKeyY: currentlyAssignedKey != null ? currentlyAssignedKey.y : 0
-
-    onCurrentlyAssignedKeyXChanged: __repositionPopoverTo(currentlyAssignedKey)
-    onCurrentlyAssignedKeyYChanged: __repositionPopoverTo(currentlyAssignedKey)
-    onCurrentlyAssignedKeyParentYChanged: __repositionPopoverTo(currentlyAssignedKey);
-
-    onCurrentlyAssignedKeyChanged:
-    {
-        if (currentlyAssignedKey == null)
-            return;
-
-        __repositionPopoverTo(currentlyAssignedKey);
-    }
-
     ///
     // Item gets repositioned above the currently active key on keyboard.
     // extended keys area will center on top of this
@@ -49,20 +33,5 @@ Item {
         id: __anchorItem
         width: panel.keyWidth
         height: panel.keyHeight
-    }
-
-    function __repositionPopoverTo(item)
-    {
-        if(item) {
-            var point = popover.mapFromItem(item, item.x, item.y)
-            if (item.parent.parent.parent.objectName == "emojiGrid") {
-                // The emoji layout uses a GridView, which requires
-                // a different location calculation
-                __anchorItem.x = point.x;
-            } else { 
-                __anchorItem.x = item.x + item.parent.x
-            }
-            __anchorItem.y = point.y - panel.keyHeight;
-        }
     }
 }

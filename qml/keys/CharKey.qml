@@ -104,6 +104,10 @@ Item {
     // accidentally selecting something other than the default extended key
     property bool swipeReady: false
 
+    // In case the key may be embedded in some type of flickable component
+    // so that magnifier can be hidden
+    property bool moving: false
+
     signal pressed()
     signal released()
     signal pressAndHold()
@@ -381,6 +385,21 @@ Item {
         onTriggered: {
             swipeReady = true;
             keyMouseArea.evaluateSelectorSwipe();
+        }
+    }
+
+    Magnifier {
+        id: magnifier
+        x: (leftSide ? key.width - width + (width - panel.keyWidth) / 2
+            : 0 - (width - panel.keyWidth) / 2)
+        y: key.y - panel.keyHeight
+    }
+
+    onMovingChanged: {
+        if (moving) {
+            keyMouseArea.pressed = false;
+            magnifier.shown = false;
+            extendedKeysSelector.enabled = false;
         }
     }
 }

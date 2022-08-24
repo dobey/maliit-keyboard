@@ -47,14 +47,8 @@ KeyPopover {
 
     Rectangle {
         id: popper
-        
-        
-        width: parent.width
-        height: parent.height
 
-        //fix anchor loop, see https://forum.qt.io/topic/103522/anchor-loop-with-layout-centerin/4
-        anchors.horizontalCenter: anchorItem.horizontalCenter
-        anchors.verticalCenter: anchorItem.verticalCenter
+        anchors.fill: parent
 
         // this property is used to synchronize scale and opacity animation
         property real animationStep: 0
@@ -74,20 +68,6 @@ KeyPopover {
             width: tip.background.border.width
             color: tip.background.border.color
         }
-
-        onXChanged: {
-            if (x < Device.popoverEdgeMargin) {
-                anchorItem.x += Math.abs(x) + Device.popoverEdgeMargin;
-                return;
-            }
-
-            var rightEdge = (x + width);
-            if ( rightEdge > (panel.width - Device.popoverEdgeMargin)) {
-                var diff = rightEdge - panel.width;
-                anchorItem.x -= diff + Device.popoverEdgeMargin;
-            }
-        }
-
 
         Label {
             id: label
