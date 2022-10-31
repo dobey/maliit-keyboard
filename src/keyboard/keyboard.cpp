@@ -24,6 +24,7 @@
  */
 
 #include <QGuiApplication>
+#include <QQuickStyle>
 
 #include <maliit/standaloneinputmethod.h>
 #include <src/plugin/plugin.h>
@@ -31,6 +32,11 @@
 int main(int argc, char **argv) {
     setenv("QT_IM_MODULE", "none", true);
     setenv("QT_WAYLAND_SHELL_INTEGRATION", "inputpanel-shell", true);
+
+    // Fall back to Breeze style if another is not set by the environment
+    if (qgetenv("QT_QUICK_CONTROLS_STYLE").isEmpty()) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+    }
 
     QGuiApplication app(argc, argv);
 
