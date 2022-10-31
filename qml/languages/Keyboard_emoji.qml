@@ -171,6 +171,8 @@ KeyPad {
             CharKey {
                 id: emojiKey
                 property var emoji: null
+                keyWidth: c1.cellWidth
+                keyHeight: c1.cellHeight
                 visible: label != ""
                 label: emoji != null ? emoji.char : ""
                 shifted: label
@@ -206,6 +208,8 @@ KeyPad {
 
         SymbolShiftKey {
             id: symbolShiftKey
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
             label: ""
             shifted: label
             iconNormal: "go-previous-symbolic"
@@ -214,6 +218,8 @@ KeyPad {
 
         CategoryKey {
             id: recentCat
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
             label: "⏱"
             highlight: (c1.midVisibleIndex < internal.recentEmoji.length && c1.midVisibleIndex > 0)
                        || (c1.contentX == 0 && internal.recentEmoji.length > 0)
@@ -224,6 +230,8 @@ KeyPad {
         }           
  
         CategoryKey {
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
             label: "😀"
             highlight: (c1.midVisibleIndex >= internal.recentEmoji.length 
                         && c1.midVisibleIndex < 540 + internal.recentEmoji.length
@@ -239,6 +247,8 @@ KeyPad {
         }
 
         CategoryKey {
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
             label: "🐶"
             highlight: c1.midVisibleIndex >= 540 + internal.recentEmoji.length && c1.midVisibleIndex < 701 + internal.recentEmoji.length
             onPressed: {
@@ -248,6 +258,8 @@ KeyPad {
         }
 
         CategoryKey {
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
             label: "🍏"
             highlight: c1.midVisibleIndex >= 701 + internal.recentEmoji.length && c1.midVisibleIndex < 786 + internal.recentEmoji.length
             onPressed: {
@@ -257,6 +269,8 @@ KeyPad {
         }
 
         CategoryKey {
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
             label: "🎾"
             highlight: c1.midVisibleIndex >= 786 + internal.recentEmoji.length && c1.midVisibleIndex < 931 + internal.recentEmoji.length
             onPressed: {
@@ -266,6 +280,8 @@ KeyPad {
         }
 
         CategoryKey {
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
             label: "🚗"
              highlight: c1.midVisibleIndex >= 931 + internal.recentEmoji.length && c1.midVisibleIndex < 1050 + internal.recentEmoji.length
             onPressed: {
@@ -275,6 +291,8 @@ KeyPad {
         }
 
         CategoryKey {
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
             label: "💡"
             highlight: c1.midVisibleIndex >= 1050 + internal.recentEmoji.length && c1.midVisibleIndex < 1229 + internal.recentEmoji.length
             onPressed: {
@@ -284,6 +302,8 @@ KeyPad {
         }
 
         CategoryKey {
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
             label: "❤"
             highlight: c1.midVisibleIndex >= 1229 + internal.recentEmoji.length && c1.midVisibleIndex < 1512 + internal.recentEmoji.length
             onPressed: {
@@ -293,6 +313,8 @@ KeyPad {
         }
 
         CategoryKey {
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
             label: "🌍"
             highlight: c1.midVisibleIndex >= 1512 + internal.recentEmoji.length
             onPressed: {
@@ -302,7 +324,8 @@ KeyPad {
         }
 
         BackspaceKey {
-            padding: 0
+            keyWidth: panel.keyWidth
+            keyHeight: panel.keyHeight
         }
     }
 }
