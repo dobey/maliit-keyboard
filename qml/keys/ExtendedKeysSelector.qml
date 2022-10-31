@@ -31,7 +31,7 @@ KeyPopover {
     property int fontSize: 0
 
     // A readonly variable to check if our grid has multiple rows
-    readonly property bool multirow: rowOfKeys.columns < (extendedKeysModel ? extendedKeysModel.length : 0)
+    readonly property bool multirow: (extendedKeysModel != null && extendedKeysModel.length > 5)
 
     property string __commitStr: ""
 
@@ -85,15 +85,9 @@ KeyPopover {
         id: popoverBackground
 
         anchors.centerIn: anchorItem
-        anchors.verticalCenterOffset: -Device.popoverTopMargin
+        anchors.verticalCenterOffset: -(height + Device.popoverTopMargin) + (popover.multirow ? panel.keyHeight / 2 : 0)
 
-        width: {
-            if (rowOfKeys.width < keypad.keyWidth)
-                return keypad.keyWidth;
-            else
-                return rowOfKeys.width;
-        }
-
+        width: rowOfKeys.width
         height: rowOfKeys.height
 
         // Invisible tooltip to copy the qqc2 style colors from
@@ -114,15 +108,14 @@ KeyPopover {
                 return;
             }
             var point = popover.mapFromItem(item, item.x, item.y);
-            anchorItem.x = item.x + item.parent.x;
-            anchorItem.y = point.y - panel.keyHeight;
+            anchorItem.x = point.x;
+            anchorItem.y = point.y;
         }
 
         onXChanged: {
-
             if (x < Device.popoverEdgeMargin) {
                 anchorItem.x += Math.abs(x) + Device.popoverEdgeMargin;
-                return
+                return;
             }
 
             var rightEdge = (x + width)
@@ -135,8 +128,7 @@ KeyPopover {
 
     GridLayout {
         id: rowOfKeys
-        anchors.centerIn: anchorItem
-        anchors.verticalCenterOffset: -Device.popoverTopMargin
+        anchors.centerIn: popoverBackground
 
         Repeater {
             id: keyRepeater
@@ -175,7 +167,8 @@ KeyPopover {
                     event_handler.onKeyReleased(modelData);
                     if (panel.autoCapsTriggered) {
                         panel.autoCapsTriggered = false;
-                    } else if (!skipAutoCaps) {
+                    }
+                    if (!skipAutoCaps) {
                         if (popover.parent.activeKeypadState === "SHIFTED" && popover.parent.state === "CHARACTERS")
                             popover.parent.activeKeypadState = "NORMAL"
                     }
