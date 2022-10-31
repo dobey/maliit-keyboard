@@ -32,6 +32,8 @@
 #ifndef MALIIT_KEYBOARD_INPUTMETHOD_H
 #define MALIIT_KEYBOARD_INPUTMETHOD_H
 
+#include "keysmodel.h"
+
 #include <maliit/plugins/abstractinputmethod.h>
 #include <maliit/plugins/abstractinputmethodhost.h>
 #include <maliit/plugins/keyoverride.h>
@@ -51,6 +53,7 @@ class InputMethod
     Q_PROPERTY(TextContentType contentType READ contentType WRITE setContentType NOTIFY contentTypeChanged)
     Q_PROPERTY(QStringList enabledLanguages READ enabledLanguages NOTIFY enabledLanguagesChanged)
     Q_PROPERTY(QString activeLanguage READ activeLanguage WRITE setActiveLanguage NOTIFY activeLanguageChanged)
+    Q_PROPERTY(MaliitKeyboard::KeysModel* keyLayout READ keyLayout NOTIFY keyLayoutChanged)
     Q_PROPERTY(QObject* actionKeyOverride READ actionKeyOverride NOTIFY actionKeyOverrideChanged)
     Q_PROPERTY(bool useHapticFeedback READ useHapticFeedback NOTIFY useHapticFeedbackChanged)
     Q_PROPERTY(bool enableMagnifier READ enableMagnifier NOTIFY enableMagnifierChanged)
@@ -114,6 +117,7 @@ public:
     const QString &activeLanguage() const;
     Q_INVOKABLE void selectNextLanguage();
     Q_SLOT void setActiveLanguage(const QString& newLanguage);
+    MaliitKeyboard::KeysModel* keyLayout() const;
 
     Q_SLOT void onVisibleRectChanged();
 
@@ -157,6 +161,7 @@ Q_SIGNALS:
     void deactivateAutocaps();
     void enabledLanguagesChanged(QStringList languages);
     void activeLanguageChanged(QString language);
+    void keyLayoutChanged();
     void useAudioFeedbackChanged();
     void audioFeedbackSoundChanged(QString sound);
     void useHapticFeedbackChanged();

@@ -21,6 +21,8 @@
 #include "editor.h"
 #include "feedback.h"
 #include "gettext.h"
+#include "keyinfo.h"
+#include "keysmodel.h"
 
 #include "keyboardgeometry.h"
 #include "keyboardsettings.h"
@@ -92,6 +94,7 @@ public:
     std::unique_ptr<Feedback> m_feedback;
     std::unique_ptr<Device> m_device;
     std::unique_ptr<Gettext> m_gettext;
+    std::unique_ptr<KeysModel> m_keys;
 
     WordRibbon* wordRibbon;
 
@@ -123,6 +126,7 @@ public:
         , m_feedback(std::make_unique<Feedback>(&m_settings))
         , m_device(std::make_unique<Device>(&m_settings))
         , m_gettext(std::make_unique<Gettext>())
+        , m_keys(std::make_unique<KeysModel>())
         , wordRibbon(new WordRibbon)
         , previous_position(-1)
     {
@@ -219,6 +223,11 @@ public:
         qmlRegisterSingletonInstance("MaliitKeyboard", 2, 0, "MaliitEventHandler", &event_handler);
         qmlRegisterSingletonInstance("MaliitKeyboard", 2, 0, "WordModel", wordRibbon);
         qmlRegisterSingletonInstance("MaliitKeyboard", 2, 0, "WordEngine", editor.wordEngine());
+
+        qmlRegisterUncreatableType<KeyInfo>("MaliitKeyboard", 2, 0, "KeyInfo",
+                                            QStringLiteral("Not instantiable from QML."));
+        qmlRegisterUncreatableType<KeysModel>("MaliitKeyboard", 2, 0, "KeysModel",
+                                            QStringLiteral("Not instantiable from QML."));
     }
 
     void updateLanguagesPaths()
@@ -289,6 +298,8 @@ public:
                          q, &InputMethod::setActiveLanguage);
 
         activeLanguage = m_settings.activeLanguage();
+        m_keys->setLanguage(activeLanguage);
+
         qDebug() << "inputmethod_p.h registerActiveLanguage(): activeLanguage is:" << activeLanguage;
         q->setActiveLanguage(activeLanguage);
     }

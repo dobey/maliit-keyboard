@@ -278,6 +278,9 @@ void InputMethod::updateAutoCaps()
     Q_D(InputMethod);
     bool enabled = d->m_settings.autoCapitalization();
     enabled &= d->contentType == FreeTextContentType;
+    // Avoid auto caps for languages which do not have capitalization
+    enabled &= !d->m_keys->shiftlessKeys();
+
     bool valid = true;
     bool autocap = d->host->autoCapitalizationEnabled(valid) && d->editor.wordEngine()->languageFeature()->autoCapsAvailable();
     enabled &= autocap;
@@ -535,6 +538,13 @@ const QString &InputMethod::activeLanguage() const
     return d->activeLanguage;
 }
 
+//! \brief InputMethod::keyLayout returns the current language's key layout
+MaliitKeyboard::KeysModel* InputMethod::keyLayout() const
+{
+    Q_D(const InputMethod);
+    return d->m_keys.get();
+}
+
 //! \brief InputMethod::useAudioFeedback is true, when keys should play a audio
 //! feedback when pressed
 //! \return
@@ -630,6 +640,7 @@ void InputMethod::setActiveLanguage(const QString &newLanguage)
 
     d->activeLanguage = newLanguage;
     d->m_settings.setActiveLanguage(newLanguage);
+    d->m_keys->setLanguage(newLanguage);
 
     qDebug() << "in inputMethod.cpp setActiveLanguage() emitting activeLanguageChanged to" << d->activeLanguage;
     Q_EMIT activeLanguageChanged(d->activeLanguage);

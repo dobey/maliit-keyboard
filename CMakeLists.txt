@@ -157,6 +157,10 @@ set(MALIIT_KEYBOARD_COMMON_SOURCES
         src/plugin/feedback.h
         src/plugin/gettext.cpp
         src/plugin/gettext.h
+        src/plugin/keyinfo.cpp
+        src/plugin/keyinfo.h
+        src/plugin/keysmodel.cpp
+        src/plugin/keysmodel.h
         src/plugin/inputmethod.cpp
         src/plugin/inputmethod.h
         src/plugin/inputmethod_p.h
@@ -398,10 +402,10 @@ install(TARGETS maliit-keyboard-plugin maliit-keyboard
 
 install(DIRECTORY qml/keys qml/languages
         DESTINATION ${MALIIT_KEYBOARD_QML_DIR})
-install(FILES qml/ActionsToolbar.qml qml/FloatingActions.qml qml/Keyboard.qml qml/KeyboardContainer.qml qml/WordRibbon.qml
+install(FILES qml/ActionsToolbar.qml qml/FloatingActions.qml qml/Keyboard.qml qml/KeyboardContainer.qml qml/KeyboardPanel.qml qml/WordRibbon.qml
         DESTINATION ${MALIIT_KEYBOARD_QML_DIR})
 
-install(DIRECTORY data/devices
+install(DIRECTORY data/devices data/languages
         DESTINATION ${MALIIT_KEYBOARD_DATA_DIR})
 install(FILES data/schemas/org.maliit.keyboard.maliit.gschema.xml
         DESTINATION share/glib-2.0/schemas/)
