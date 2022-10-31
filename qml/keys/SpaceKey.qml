@@ -22,14 +22,13 @@ import MaliitKeyboard 2.0
 
 import "languages.js" as Languages
 
-ActionKey {
+AbstractKey {
+    id: spaceKey
+
     label: " ";
     shifted: " ";
 
     action: "space"
-    switchBackFromSymbols: true
-
-    overridePressArea: true
 
     Rectangle {
         anchors.margins: 8
@@ -48,39 +47,24 @@ ActionKey {
         horizontalAlignment: Text.AlignHCenter
     }
 
-    MouseArea {
-        id: swipeArea
-        anchors.fill: parent
-
-        onPressAndHold: {
-            fullScreenItem.prevSwipePositionX = mouseX
-            fullScreenItem.prevSwipePositionY = mouseY
-            fullScreenItem.cursorSwipe = true
-            spaceKey.currentlyPressed = false
-        }
-
-        onPressed: {
-            Feedback.keyPressed()
-            spaceKey.currentlyPressed = true
-            fullScreenItem.timerSwipe.stop()
-        }
-        onReleased: {
-            if (fullScreenItem.cursorSwipe) {
-                fullScreenItem.timerSwipe.restart()
-            } else {
-                spaceKey.currentlyPressed = false
-                event_handler.onKeyReleased("", "space")
-                if (switchBackFromSymbols && panel.state === "SYMBOLS") {
-                    panel.state = "CHARACTERS"
-                }
-            }
-        }
-
-        onMouseXChanged: {
-            if (fullScreenItem.cursorSwipe) {
-                fullScreenItem.processSwipe(mouseX, mouseY);
-            }
-        }
+    onPressAndHold: {
+        fullScreenItem.prevSwipePositionX = mouse.x
+        fullScreenItem.prevSwipePositionY = mouse.y
+        fullScreenItem.cursorSwipe = true
     }
 
+    onPressed: {
+        Feedback.keyPressed()
+        fullScreenItem.timerSwipe.stop()
+    }
+
+    onReleased: {
+        if (!contains(Qt.point(mouse.x, mouse.y))) {
+            return;
+        }
+        MaliitEventHandler.onKeyReleased(label, action)
+        if (panel.state === "SYMBOLS") {
+            panel.state = "CHARACTERS"
+        }
+    }
 }
