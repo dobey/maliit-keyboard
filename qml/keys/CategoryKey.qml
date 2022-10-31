@@ -20,9 +20,8 @@ import MaliitKeyboard 2.0
 
 import keys 1.0
 
-CharKey {
+AbstractKey {
     shifted: label
-    overridePressArea: true
     width: panel.keyWidth * 0.89
     fontSize: fullScreenItem.landscape ? height / 1.8 : height / 2.5
     fontFamily: "Noto Color Emoji"
