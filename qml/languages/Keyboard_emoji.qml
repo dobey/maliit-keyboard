@@ -214,6 +214,11 @@ KeyPad {
             shifted: label
             iconNormal: "go-previous-symbolic"
             iconShifted: iconNormal
+
+            onPressed: {
+                Feedback.keyPressed();
+                panel.state = "CHARACTERS";
+            }
         }
 
         CategoryKey {
