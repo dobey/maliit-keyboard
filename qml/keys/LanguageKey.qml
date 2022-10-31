@@ -18,7 +18,7 @@ import QtQuick 2.4
 
 import MaliitKeyboard 2.0
 
-ActionKey {
+AbstractKey {
     iconNormal: altLangs ? "language-chooser-symbolic" : ""
     iconShifted: iconNormal
     iconCapsLock: iconNormal
@@ -27,17 +27,13 @@ ActionKey {
     shifted: label
 
     annotation: altLangs ? "☻" : ""
-    noMagnifier: true
 
     readonly property bool altLangs: Keyboard.enabledLanguages.length > 1
-    property bool held: false;
-
-    padding: 0
-
-    width: panel.keyWidth
-    overridePressArea: true
+    property bool held: false
 
     action: "language"
+
+    signal showLanguageMenu()
 
     onPressed: {
         Feedback.keyPressed();
@@ -53,14 +49,14 @@ ActionKey {
         if (altLangs) {
             Keyboard.selectNextLanguage();
         } else {
-            keypad.state = "EMOJI"
+            keypad.state = "EMOJI";
         }
     }
 
     onPressAndHold: {
         Feedback.keyPressed();
 
-        canvas.languageMenu.open()
+        showLanguageMenu();
         held = true;
     }
 }
