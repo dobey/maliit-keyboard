@@ -28,16 +28,9 @@ MultiPointTouchArea {
 
     /// Is true while the area is touched, and the finger did not yet lift
     property bool pressed: false
-    // Track whether we've swiped out of a key press to dismiss the keyboard
-    property bool swipedOut: false
-    property bool horizontalSwipe: false
     property bool held: false
     property alias mouseX: point.x
     property alias mouseY: point.y
-    // Keep track of the touch start position ourselves instead of using
-    // point.startY, as this always reports 0 for mouse interaction 
-    // (https://bugreports.qt.io/browse/QTBUG-41692)
-    property real startY
 
     property bool acceptDoubleClick: false
     maximumTouchPoints: 1
@@ -56,21 +49,18 @@ MultiPointTouchArea {
     touchPoints: [
         TouchPoint { 
             id: point
-            property double lastY
-            property double lastYChange
 
             // Dragging implemented here rather than in higher level
             // mouse area to avoid conflict with swipe selection
             // of extended keys
             onYChanged: {
-                if (point.y > root.y + root.height) {
-                    if (!swipedOut) {
-                        // We've swiped out of the key
-                        swipedOut = true;
-                        cancelPress();
-                    }
-                } else {
-                    lastY = point.y;
+                if (!root.contains(Qt.point(x, y))) {
+                    cancelPress();
+                }
+            }
+            onXChanged: {
+                if (!root.contains(Qt.point(x, y))) {
+                    cancelPress();
                 }
             }
         }
@@ -95,8 +85,6 @@ MultiPointTouchArea {
     onPressed: {
         pressed = true;
         held = false;
-        swipedOut = false;
-        startY = point.y;
         holdTimer.restart();
 
         // We keep a global view of whether any other keys have been
