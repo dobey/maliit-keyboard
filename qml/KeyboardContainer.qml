@@ -23,8 +23,8 @@ import MaliitKeyboard 2.0
 Item {
     id: panel
 
-    property int keyWidth: 0
-    property int keyHeight: 0
+    property alias keyWidth: characterKeypadLoader.keyWidth
+    property alias keyHeight: characterKeypadLoader.keyHeight
 
     property bool autoCapsTriggered: false
     property bool delayedAutoCaps: false
@@ -35,23 +35,27 @@ Item {
 
     state: "CHARACTERS"
 
+    function closeLanguageMenu()
+    {
+        characterKeypadLoader.closeLanguageMenu();
+    }
+
     function closeExtendedKeys()
     {
         extendedKeysSelector.closePopover();
     }
 
-    Loader {
+    KeyboardPanel {
         id: characterKeypadLoader
         objectName: "characterKeyPadLoader"
         anchors.fill: parent
-        asynchronous: false
-        source: panel.state === "CHARACTERS" ? internal.characterKeypadSource : internal.symbolKeypadSource
-        onLoaded: {
-            if (delayedAutoCaps) {
-                activeKeypadState = "SHIFTED";
-                delayedAutoCaps = false;
+        model: loadKeysModel()
+        Component.onCompleted: {
+            if (panel.delayedAutoCaps) {
+                panel.activeKeypadState = "SHIFTED";
+                panel.delayedAutoCaps = false;
             } else {
-                activeKeypadState = "NORMAL";
+                panel.activeKeypadState = "NORMAL";
             }
         }
     }
@@ -99,66 +103,47 @@ Item {
         Keyboard.keyboardState = state
     }
 
-    QtObject {
-        id: internal
+    Connections {
+        target: Keyboard.keyLayout
+        function onKeysChanged()
+        {
+            characterKeypadLoader.calculateKeySize();
+        }
+    }
 
-        property Item activeKeypad: characterKeypadLoader.item
-        property string characterKeypadSource: loadLayout(Keyboard.contentType,
-                                                          Keyboard.activeLanguage)
-        property string symbolKeypadSource: activeKeypad ? activeKeypad.symbols : ""
-
-        onCharacterKeypadSourceChanged: {
-            panel.state = "CHARACTERS";
+    function loadKeysModel()
+    {
+        if (panel.state == "SYMBOLS")
+        {
+            return Keyboard.keyLayout.symbols;
         }
 
-        function loadLayout(contentType, activeLanguage)
+        switch (Keyboard.contentType)
         {
-            var language = activeLanguage.toLowerCase();
-            if (!Keyboard.languageIsSupported(language)) {
-                // If we don't have a layout for this specific locale 
-                // check more generic locale
-                language = language.slice(0,2);
+            case Keyboard.NumberContentType:
+            {
+                return Keyboard.keyLayout.digits;
             }
-
-            if (!Keyboard.languageIsSupported(language)) {
-                console.log("Language '" + language + "' not supported - using 'en' instead");
-                Keyboard.activeLanguage = "en";
-                language = "en";
+            case Keyboard.FormattedNumberContentType:
+            {
+                return Keyboard.keyLayout.numbers;
             }
-
-            // NumberContentType
-            if (contentType === Keyboard.NumberContentType) {
-                canvas.layoutId = "number";
-                return "languages/Keyboard_numbers.qml";
+            case Keyboard.PhoneNumberContentType:
+            {
+                return Keyboard.keyLayout.phone;
             }
-
-            // FormattedNumberContentType
-            if (contentType === Keyboard.FormattedNumberContentType) {
-                canvas.layoutId = "formatted";
-                return "languages/Keyboard_formattednumbers.qml";
+            case Keyboard.EmailContentType:
+            {
+                return Keyboard.keyLayout.email;
             }
-
-            // PhoneNumberContentType
-            if (contentType === Keyboard.PhoneNumberContentType ) {
-                canvas.layoutId = "telephone";
-                return "languages/Keyboard_telephone.qml";
+            case Keyboard.UrlContentType:
+            {
+                return Keyboard.keyLayout.url;
             }
-
-            // EmailContentType
-            if (contentType === Keyboard.EmailContentType) {
-                canvas.layoutId = "email";
-                return Keyboard.currentPluginPath + "/Keyboard_" + language + "_email.qml";
+            default:
+            {
+                return Keyboard.keyLayout.keys;
             }
-
-            // UrlContentType
-            if (contentType === Keyboard.UrlContentType) {
-                canvas.layoutId = "url";
-                return Keyboard.currentPluginPath + "/Keyboard_" + language + "_url_search.qml";
-            }
-
-            // FreeTextContentType used as fallback
-            canvas.layoutId = "freetext";
-            return Keyboard.currentPluginPath + "/Keyboard_" + language + ".qml";
         }
     }
 }

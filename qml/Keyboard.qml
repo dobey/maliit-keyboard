@@ -56,7 +56,7 @@ Item {
     onYChanged: fullScreenItem.reportKeyboardVisibleRect();
     onWidthChanged: fullScreenItem.reportKeyboardVisibleRect();
     onHeightChanged: fullScreenItem.reportKeyboardVisibleRect();
-    
+
     Item {
         id: canvas
         objectName: "MaliitKeyboard" // Allow us to specify a specific keyboard within autopilot.
@@ -73,14 +73,10 @@ Item {
         property bool wordribbon_visible: WordEngine.enabled
         onWordribbon_visibleChanged: fullScreenItem.reportKeyboardVisibleRect();
 
-        property bool languageMenuShown: false
-        property alias languageMenu: languageMenu
         property bool extendedKeysShown: false
 
         property bool firstShow: true
         property bool hidingComplete: false
-
-        property string layoutId: "freetext"
 
         onXChanged: fullScreenItem.reportKeyboardVisibleRect();
         onYChanged: fullScreenItem.reportKeyboardVisibleRect();
@@ -110,7 +106,7 @@ Item {
                 // Hide thte word ribbon when in emoji or cursor mode
                 visible: !fullScreenItem.cursorSwipe && canvas.wordribbon_visible && keypad.state !== "EMOJI"
 
-                anchors.bottom: keyboardComp.top
+                anchors.bottom: keypad.top
                 width: parent.width;
 
                 // Use a size proportional to the height of keyboard keys
@@ -130,12 +126,11 @@ Item {
                 width: parent.width
                 height: 1
                 color: "#888888"
-                anchors.bottom: wordRibbon.visible ? wordRibbon.top : keyboardComp.top
+                anchors.bottom: wordRibbon.visible ? wordRibbon.top : keypad.top
             }
 
-            Item {
-                id: keyboardComp
-                objectName: "keyboardComp"
+            KeyboardContainer {
+                id: keypad
 
                 visible: !fullScreenItem.cursorSwipe
                 height: parent.height
@@ -144,22 +139,9 @@ Item {
 
                 onHeightChanged: fullScreenItem.reportKeyboardVisibleRect();
 
-                KeyboardContainer {
-                    id: keypad
-
-                    anchors.fill: parent
-                    anchors.topMargin: wordRibbon.visible ? 0 : Device.top_margin
-                    anchors.bottomMargin: Device.bottom_margin
-                }
-
-                LanguageMenu {
-                    id: languageMenu
-                    objectName: "languageMenu"
-                    anchors.centerIn: parent
-                    height: contentHeight > keypad.height ? keypad.height : contentHeight
-                    width: Device.gu(30);
-                }
-            } // keyboardComp
+                anchors.topMargin: wordRibbon.visible ? 0 : Device.top_margin
+                anchors.bottomMargin: Device.bottom_margin
+            }
         }
 
         PropertyAnimation {
@@ -191,7 +173,7 @@ Item {
                 name: "HIDDEN"
                 PropertyChanges { target: keyboardSurface; y: canvas.height }
                 onCompleted: {
-                    canvas.languageMenu.close();
+                    keypad.closeLanguageMenu();
                     keypad.closeExtendedKeys();
                     keypad.activeKeypadState = "NORMAL";
                     keypad.state = "CHARACTERS";
@@ -393,11 +375,10 @@ Item {
     }
 
     function reportKeyboardVisibleRect() {
-
         var vx = 0;
         var vy = wordRibbon.y;
         var vwidth = keyboardSurface.width;
-        var vheight = keyboardComp.height + wordRibbon.height;
+        var vheight = keypad.height + wordRibbon.height;
 
         var obj = mapFromItem(keyboardSurface, vx, vy, vwidth, vheight);
         // Report visible height of the keyboard to support anchorToKeyboard
