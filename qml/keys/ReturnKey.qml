@@ -18,7 +18,7 @@ import QtQuick 2.4
 
 import MaliitKeyboard 2.0
 
-ActionKey {
+AbstractKey {
     property var actionKeyOverride: Keyboard.actionKeyOverride
     property string overrideIconName: actionKeyOverride && actionKeyOverride.icon ? actionKeyOverride.icon : ""
     property string overrideLabel: actionKeyOverride && actionKeyOverride.label ? actionKeyOverride.label : ""
@@ -33,6 +33,13 @@ ActionKey {
     iconCapsLock: iconNormal
 
     action: "return"
-    switchBackFromSymbols: true
-    // TODO: input_method.actionKeyOverride.highlighted
+
+    onPressed: {
+        Feedback.keyPressed();
+        MaliitEventHandler.onKeyPressed(label, action);
+    }
+
+    onReleased: {
+        MaliitEventHandler.onKeyReleased(label, action);
+    }
 }
