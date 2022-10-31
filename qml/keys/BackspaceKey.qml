@@ -16,9 +16,26 @@
 
 import QtQuick 2.4
 
-ActionKey {
+import MaliitKeyboard 2.0
+
+AbstractKey {
     iconNormal: "edit-clear-symoblic";
     iconShifted: "edit-clear-symbolic";
     iconCapsLock: "edit-clear-symbolic";
     action: "backspace";
+
+    onSwiped: {
+        if (!contains(Qt.point(mouseX, mouseY))) {
+            MaliitEventHandler.onKeyReleased(label, action);
+        }
+    }
+
+    onPressed: {
+        Feedback.keyPressed();
+        MaliitEventHandler.onKeyPressed(label, action);
+    }
+
+    onReleased: {
+        MaliitEventHandler.onKeyReleased(label, action);
+    }
 }
