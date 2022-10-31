@@ -1,0 +1,173 @@
+{
+    "name": "Symbols (Persian)",
+    "keys": {
+        "D01": {
+            "normal": "۱",
+            "shifted": "!",
+            "extended": "1 ¹ ½ ⅓ ¼ ⅛",
+            "extendedShifted": "¡"
+        },
+        "D02": {
+            "normal": "۲",
+            "shifted": "`",
+            "extended": "2 ² ⅔",
+            "extendedShifted": ""
+        },
+        "D03": {
+            "normal": "۳",
+            "shifted": "|",
+            "extended": "3 ³ ¾ ⅜",
+            "extendedShifted": ""
+        },
+        "D04": {
+            "normal": "۴",
+            "shifted": "•",
+            "extended": "4 ⁴",
+            "extendedShifted": "♪ ♥ ♠ ♦ ♣"
+        },
+        "D05": {
+            "normal": "۵",
+            "shifted": "√",
+            "extended": "5 ⅝",
+            "extendedShifted": ""
+        },
+        "D06": {
+            "normal": "۶",
+            "shifted": "Π",
+            "extended": "6",
+            "extendedShifted": "π"
+        },
+        "D07": {
+            "normal": "۷",
+            "shifted": "÷",
+            "extended": "7 ⅞",
+            "extendedShifted": ""
+        },
+        "D08": {
+            "normal": "۸",
+            "shifted": "×",
+            "extended": "8",
+            "extendedShifted": ""
+        },
+        "D09": {
+            "normal": "۹",
+            "shifted": "¶",
+            "extended": "9",
+            "extendedShifted": "§"
+        },
+        "D10": {
+            "normal": "۰",
+            "shifted": "∆",
+            "extended": "0 ⁿ ∅",
+            "extendedShifted": ""
+        },
+        "C01": {
+            "normal": "٫",
+            "shifted": "£",
+            "extended": "@",
+            "extendedShifted": ""
+        },
+        "C02": {
+            "normal": "٬",
+            "shifted": "¢",
+            "extended": "#",
+            "extendedShifted": ""
+        },
+        "C03": {
+            "normal": "﷼",
+            "shifted": "€",
+            "extended": "$ ¢ £ € ¥ ₱",
+            "extendedShifted": ""
+        },
+        "C04": {
+            "normal": "%",
+            "shifted": "¥",
+            "extended": "‰",
+            "extendedShifted": ""
+        },
+        "C05": {
+            "normal": "&",
+            "shifted": "^",
+            "extended": "",
+            "extendedShifted": "↑ ↓ ← →"
+        },
+        "C06": {
+            "normal": "-",
+            "shifted": "°",
+            "extended": "_ – — ·",
+            "extendedShifted": "′ ″"
+        },
+        "C07": {
+            "normal": "+",
+            "shifted": "=",
+            "extended": "±",
+            "extendedShifted": "≠ ≈ ∞"
+        },
+        "C08": {
+            "normal": "(",
+            "shifted": "{",
+            "extended": "< { [",
+            "extendedShifted": ""
+        },
+        "C09": {
+            "normal": ")",
+            "shifted": "}",
+            "extended": "> } ]",
+            "extendedShifted": ""
+        },
+        "B01": {
+            "normal": "*",
+            "shifted": "\\",
+            "extended": "† ‡ ★",
+            "extendedShifted": ""
+        },
+        "B02": {
+            "normal": "\"",
+            "shifted": "©",
+            "extended": "“ ” « »",
+            "extendedShifted": ""
+        },
+        "B03": {
+            "normal": "'",
+            "shifted": "®",
+            "extended": "‘ ’ ‹ ›",
+            "extendedShifted": ""
+        },
+        "B04": {
+            "normal": ":",
+            "shifted": "™",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B05": {
+            "normal": ";",
+            "shifted": "℅",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B06": {
+            "normal": "!",
+            "shifted": "[",
+            "extended": "¡",
+            "extendedShifted": ""
+        },
+        "B07": {
+            "normal": "?",
+            "shifted": "]",
+            "extended": "¿",
+            "extendedShifted": ""
+        },
+        "A02": {
+            "normal": ",",
+            "shifted": "<",
+            "extended": "",
+            "extendedShifted": "‹ ≤ «"
+        },
+        "A04": {
+            "normal": ".",
+            "shifted": ">",
+            "extended": "_",
+            "extendedShifted": "› ≥ »"
+        }
+    }
+}

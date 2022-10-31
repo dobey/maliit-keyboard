@@ -1,0 +1,179 @@
+{
+    "name": "English (Dvorak)",
+    "keys": {
+        "D01": {
+            "normal": "'",
+            "shifted": "\"",
+            "extended": "1 ! ¡",
+            "extendedShifted": "1 ! ¡"
+        },
+        "D02": {
+            "normal": ",",
+            "shifted": ",",
+            "extended": "2 <",
+            "extendedShifted": "2 <"
+        },
+        "D03": {
+            "normal": ".",
+            "shifted": ".",
+            "extended": "3 > ?",
+            "extendedShifted": "3 > ?"
+        },
+        "D04": {
+            "normal": "p",
+            "shifted": "P",
+            "extended": "4",
+            "extendedShifted": "4"
+        },
+        "D05": {
+            "normal": "y",
+            "shifted": "Y",
+            "extended": "5",
+            "extendedShifted": "5"
+        },
+        "D06": {
+            "normal": "f",
+            "shifted": "F",
+            "extended": "6",
+            "extendedShifted": "6"
+        },
+        "D07": {
+            "normal": "g",
+            "shifted": "G",
+            "extended": "7",
+            "extendedShifted": "7"
+        },
+        "D08": {
+            "normal": "c",
+            "shifted": "C",
+            "extended": "8 ç",
+            "extendedShifted": "8 Ç"
+        },
+        "D09": {
+            "normal": "r",
+            "shifted": "R",
+            "extended": "9",
+            "extendedShifted": "9"
+        },
+        "D10": {
+            "normal": "l",
+            "shifted": "L",
+            "extended": "0",
+            "extendedShifted": "0"
+        },
+        "C01": {
+            "normal": "a",
+            "shifted": "A",
+            "extended": "à á â ä æ ã å ā",
+            "extendedShifted": "À Á Â Ä Æ Ã Å Ā"
+        },
+        "C02": {
+            "normal": "o",
+            "shifted": "O",
+            "extended": "ö",
+            "extendedShifted": "ö"
+        },
+        "C03": {
+            "normal": "E",
+            "shifted": "E",
+            "extended": "é",
+            "extendedShifted": "É"
+        },
+        "C04": {
+            "normal": "u",
+            "shifted": "U",
+            "extended": "ü ú",
+            "extendedShifted": "Ü Ú"
+        },
+        "C05": {
+            "normal": "i",
+            "shifted": "I",
+            "extended": "í ï",
+            "extendedShifted": "Í Ï"
+        },
+        "C06": {
+            "normal": "d",
+            "shifted": "D",
+            "extended": "ð",
+            "extendedShifted": "Ð"
+        },
+        "C07": {
+            "normal": "h",
+            "shifted": "H",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C08": {
+            "normal": "t",
+            "shifted": "T",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C09": {
+            "normal": "n",
+            "shifted": "N",
+            "extended": "ñ",
+            "extendedShifted": "Ñ"
+        },
+        "C10": {
+            "normal": "s",
+            "shifted": "S",
+            "extended": "ß",
+            "extendedShifted": ""
+        },
+        "B01": {
+            "normal": "j",
+            "shifted": "J",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B02": {
+            "normal": "k",
+            "shifted": "K",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B03": {
+            "normal": "x",
+            "shifted": "X",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B04": {
+            "normal": "b",
+            "shifted": "B",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B05": {
+            "normal": "m",
+            "shifted": "M",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B06": {
+            "normal": "w",
+            "shifted": "W",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B07": {
+            "normal": "v",
+            "shifted": "V",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "A02": {
+            "normal": "q",
+            "shifted": "Q",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "A04": {
+            "normal": "z",
+            "shifted": "Z",
+            "extended": "# ! , ? - : ' @",
+            "extendedShifted": "# ! , ? - : ' @"
+        }
+    }
+}

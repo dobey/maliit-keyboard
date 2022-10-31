@@ -1,0 +1,173 @@
+{
+    "name": "Chinese (Pinyin)",
+    "keys": {
+        "D01": {
+            "normal": "q",
+            "shifted": "Q",
+            "extended": "1 ! ¡",
+            "extendedShifted": "1 ! ¡"
+        },
+        "D02": {
+            "normal": "w",
+            "shifted": "W",
+            "extended": "2",
+            "extendedShifted": "2"
+        },
+        "D03": {
+            "normal": "e",
+            "shifted": "E",
+            "extended": "3 è é ê ë ē",
+            "extendedShifted": "3 È É Ê Ë Ē"
+        },
+        "D04": {
+            "normal": "r",
+            "shifted": "R",
+            "extended": "4",
+            "extendedShifted": "4"
+        },
+        "D05": {
+            "normal": "t",
+            "shifted": "T",
+            "extended": "5",
+            "extendedShifted": "5"
+        },
+        "D06": {
+            "normal": "y",
+            "shifted": "Y",
+            "extended": "6",
+            "extendedShifted": "6"
+        },
+        "D07": {
+            "normal": "u",
+            "shifted": "U",
+            "extended": "7 û ü ù ú ū",
+            "extendedShifted": "7 Û Ü Ù Ú Ū"
+        },
+        "D08": {
+            "normal": "i",
+            "shifted": "I",
+            "extended": "8 î ï í ī ì",
+            "extendedShifted": "8 Î Ï Í Ī Ì"
+        },
+        "D09": {
+            "normal": "o",
+            "shifted": "O",
+            "extended": "9 ô ö ò ó œ ø ō õ",
+            "extendedShifted": "9 Ô Ö Ò Ó Œ Ø Ō Õ"
+        },
+        "D10": {
+            "normal": "p",
+            "shifted": "P",
+            "extended": "0",
+            "extendedShifted": "0"
+        },
+        "C01": {
+            "normal": "a",
+            "shifted": "A",
+            "extended": "à á â ä æ ã å ā",
+            "extendedShifted": "À Á Â Ä Æ Ã Å Ā"
+        },
+        "C02": {
+            "normal": "s",
+            "shifted": "S",
+            "extended": "ß",
+            "extendedShifted": ""
+        },
+        "C03": {
+            "normal": "d",
+            "shifted": "D",
+            "extended": "ð",
+            "extendedShifted": "Ð"
+        },
+        "C04": {
+            "normal": "f",
+            "shifted": "F",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C05": {
+            "normal": "g",
+            "shifted": "G",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C06": {
+            "normal": "h",
+            "shifted": "H",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C07": {
+            "normal": "j",
+            "shifted": "J",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C08": {
+            "normal": "k",
+            "shifted": "K",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C09": {
+            "normal": "l",
+            "shifted": "L",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B01": {
+            "normal": "z",
+            "shifted": "Z",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B02": {
+            "normal": "x",
+            "shifted": "X",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B03": {
+            "normal": "c",
+            "shifted": "C",
+            "extended": "ç",
+            "extendedShifted": "Ç"
+        },
+        "B04": {
+            "normal": "v",
+            "shifted": "V",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B05": {
+            "normal": "b",
+            "shifted": "B",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B06": {
+            "normal": "n",
+            "shifted": "N",
+            "extended": "ñ",
+            "extendedShifted": "Ñ"
+        },
+        "B07": {
+            "normal": "m",
+            "shifted": "M",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "A02": {
+            "normal": ",",
+            "shifted": ",",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "A04": {
+            "normal": "。",
+            "shifted": ".",
+            "extended": "# ! , ? - : ' @",
+            "extendedShifted": "# ! , ? - : ' @"
+        }
+    }
+}

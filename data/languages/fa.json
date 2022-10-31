@@ -1,0 +1,126 @@
+{
+    "name": "Arabic",
+    "shiftless": true,
+    "keys": {
+        "D01": {
+            "normal": "ض",
+            "extended": "۱ 1"
+        },
+        "D02": {
+            "normal": "ص",
+            "extended": "۲ 2"
+        },
+        "D03": {
+            "normal": "ث",
+            "extended": "۳ 3"
+        },
+        "D04": {
+            "normal": "ق",
+            "extended": "۴ 4 ڨ"
+        },
+        "D05": {
+            "normal": "ف",
+            "extended": "۵ 5 ڤ ڢ ڥ"
+        },
+        "D06": {
+            "normal": "غ",
+            "extended": "۶ 6"
+        },
+        "D07": {
+            "normal": "ع",
+            "extended": "۷ 7"
+        },
+        "D08": {
+            "normal": "ه",
+            "extended": "۸ 8 ه‍"
+        },
+        "D09": {
+            "normal": "خ",
+            "extended": "۹ 9"
+        },
+        "D10": {
+            "normal": "ح",
+            "extended": "٠ 0"
+        },
+        "D11": {
+            "normal": "ج"
+        },
+        "C01": {
+            "normal": "ش",
+            "extended": "ڜ"
+        },
+        "C02": {
+            "normal": "س"
+        },
+        "C03": {
+            "normal": "ی",
+            "extended": "ئ ي ﯨ ى"
+        },
+        "C04": {
+            "normal": "ب",
+            "extended": "پ"
+        },
+        "C05": {
+            "normal": "ل"
+        },
+        "C06": {
+            "normal": "ا",
+            "extended": "آ ء أ إ ٱ"
+        },
+        "C07": {
+            "normal": "ت",
+            "extended": "ة"
+        },
+        "C08": {
+            "normal": "ن"
+        },
+        "C09": {
+            "normal": "م"
+        },
+        "C10": {
+            "normal": "ک",
+            "extended": "ك"
+        },
+        "C11": {
+            "normal": "گ"
+        },
+        "B01": {
+            "normal": "ظ"
+        },
+        "B02": {
+            "normal": "ط"
+        },
+        "B03": {
+            "normal": "ژ"
+        },
+        "B04": {
+            "normal": "ز"
+        },
+        "B05": {
+            "normal": "ر"
+        },
+        "B06": {
+            "normal": "ذ"
+        },
+        "B07": {
+            "normal": "د"
+        },
+        "B08": {
+            "normal": "پ"
+        },
+        "B09": {
+            "normal": "و",
+            "extended": "ؤ"
+        },
+        "B10": {
+            "normal": "چ"
+        },
+        "A02": {
+            "normal": "،"
+        },
+        "A04": {
+            "normal": ".",
+            "extended": "؟ ؛ :"
+        }
+    }
+}

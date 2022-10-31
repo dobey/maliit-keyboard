@@ -1,0 +1,293 @@
+{
+    "name": "Thai",
+    "keys": {
+        "E01": {
+            "normal": "ๅ",
+            "shifted": "+",
+            "extended": "1 ๑",
+            "extendedShifted": "1 ๑"
+        },
+        "E02": {
+            "normal": "/",
+            "shifted": "๑",
+            "extended": "2 ๒",
+            "extendedShifted": "2 ๒"
+        },
+        "E03": {
+            "normal": "-",
+            "shifted": "๒",
+            "extended": "3 ๓",
+            "extendedShifted": "3 ๓"
+        },
+        "E04": {
+            "normal": "ภ",
+            "shifted": "๓",
+            "extended": "4 ๔",
+            "extendedShifted": "4 ๔"
+        },
+        "E05": {
+            "normal": "ถ",
+            "shifted": "๔",
+            "extended": "5 ๕",
+            "extendedShifted": "5 ๕"
+        },
+        "E06": {
+            "normal": " ุ",
+            "shifted": " ู",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "E07": {
+            "normal": " ึ",
+            "shifted": "฿",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "E08": {
+            "normal": "ค",
+            "shifted": "๕",
+            "extended": "6 ๖",
+            "extendedShifted": "6 ๖"
+        },
+        "E09": {
+            "normal": "ต",
+            "shifted": "๖",
+            "extended": "7 ๗",
+            "extendedShifted": "7 ๗"
+        },
+        "E10": {
+            "normal": "จ",
+            "shifted": "๗",
+            "extended": "8 ๘",
+            "extendedShifted": "8 ๘"
+        },
+        "E11": {
+            "normal": "ข",
+            "shifted": "๘",
+            "extended": "9 ๙",
+            "extendedShifted": "9 ๙"
+        },
+        "E12": {
+            "normal": "ช",
+            "shifted": "๙",
+            "extended": "0 ๐",
+            "extendedShifted": "0 ๐"
+        },
+        "D01": {
+            "normal": "ๆ",
+            "shifted": "๐",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D02": {
+            "normal": "ไ",
+            "shifted": "\"",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D03": {
+            "normal": "ำ",
+            "shifted": "ฎ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D04": {
+            "normal": "พ",
+            "shifted": "ฑ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D05": {
+            "normal": "ะ",
+            "shifted": "ธ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D06": {
+            "normal": " ั",
+            "shifted": " ํ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D07": {
+            "normal": " ี",
+            "shifted": " ๊",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D08": {
+            "normal": "ร",
+            "shifted": "ณ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D09": {
+            "normal": "น",
+            "shifted": "ฯ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D10": {
+            "normal": "ย",
+            "shifted": "ญ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D11": {
+            "normal": "บ",
+            "shifted": "ฐ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "D12": {
+            "normal": "ล",
+            "shifted": ",",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C01": {
+            "normal": "ฟ",
+            "shifted": "ฤ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C02": {
+            "normal": "ห",
+            "shifted": "ฆ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C03": {
+            "normal": "ก",
+            "shifted": "ฏ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C04": {
+            "normal": "ด",
+            "shifted": "โ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C05": {
+            "normal": "เ",
+            "shifted": "ฌ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C06": {
+            "normal": " ้",
+            "shifted": " ็",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C07": {
+            "normal": " ่",
+            "shifted": " ๋",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C08": {
+            "normal": "า",
+            "shifted": "ษ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C09": {
+            "normal": "ส",
+            "shifted": "ศ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C10": {
+            "normal": "ว",
+            "shifted": "ซ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C11": {
+            "normal": "ง",
+            "shifted": ".",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "C12": {
+            "normal": "ฃ",
+            "shifted": "ฅ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B01": {
+            "normal": "ผ",
+            "shifted": "(",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B02": {
+            "normal": "ป",
+            "shifted": ")",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B03": {
+            "normal": "แ",
+            "shifted": "ฉ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B04": {
+            "normal": "อ",
+            "shifted": "ฮ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B05": {
+            "normal": " ิ",
+            "shifted": " ฺ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B06": {
+            "normal": " ื",
+            "shifted": " ์",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B07": {
+            "normal": "ท",
+            "shifted": "?",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B08": {
+            "normal": "ม",
+            "shifted": "ฒ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B09": {
+            "normal": "ใ",
+            "shifted": "ฬ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "B10": {
+            "normal": "ฝ",
+            "shifted": "ฦ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "A02": {
+            "normal": ",",
+            "shifted": ",",
+            "extended": "' \" ; : @ & ( )",
+            "extendedShifted": "' \" ; : @ & ( )"
+        },
+        "A04": {
+            "normal": ".",
+            "shifted": ".",
+            "extended": "? - _ ! + % # /",
+            "extendedShifted": "? - _ ! + % # /"
+        }
+    }
+}

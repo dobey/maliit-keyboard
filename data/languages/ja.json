@@ -1,0 +1,206 @@
+{
+    "name": "Japanese (Kana)",
+    "shiftless": true,
+    "keys": {
+        "E01": {
+            "normal": "ぬ",
+            "shifted": "ぬ",
+            "extended": "",
+            "extendedShifted": ""
+        },
+        "E02": {
+            "normal": "ふ",
+            "shifted": "ふ",
+            "extended": "1",
+            "extendedShifted": "1"
+        },
+        "E03": {
+            "normal": "あ",
+            "shifted": "あ",
+            "extended": "2",
+            "extendedShifted": "2"
+        },
+        "E04": {
+            "normal": "う",
+            "shifted": "う",
+            "extended": "3",
+            "extendedShifted": "3"
+        },
+        "E05": {
+            "normal": "え",
+            "shifted": "え",
+            "extended": "4",
+            "extendedShifted": "4"
+        },
+        "E06": {
+            "normal": "お",
+            "shifted": "お",
+            "extended": "5",
+            "extendedShifted": "5"
+        },
+        "E07": {
+            "normal": "や",
+            "shifted": "や",
+            "extended": "6",
+            "extendedShifted": "6"
+        },
+        "E08": {
+            "normal": "ゆ",
+            "shifted": "ゆ",
+            "extended": "7",
+            "extendedShifted": "7"
+        },
+        "E09": {
+            "normal": "よ",
+            "shifted": "よ",
+            "extended": "8",
+            "extendedShifted": "8"
+        },
+        "E10": {
+            "normal": "わ",
+            "shifted": "わ",
+            "extended": "9",
+            "extendedShifted": "9"
+        },
+        "E11": {
+            "normal": "ほ",
+            "shifted": "ほ",
+            "extended": "0",
+            "extendedShifted": "0"
+        },
+        "E12": {
+            "normal": "へ",
+            "shifted": "へ"
+        },
+        "D01": {
+            "normal": "た",
+            "shifted": "た"
+        },
+        "D02": {
+            "normal": "て",
+            "shifted": "て"
+        },
+        "D03": {
+            "normal": "い",
+            "shifted": "い"
+        },
+        "D04": {
+            "normal": "す",
+            "shifted": "す"
+        },
+        "D05": {
+            "normal": "か",
+            "shifted": "か"
+        },
+        "D06": {
+            "normal": "ん",
+            "shifted": "ん"
+        },
+        "D07": {
+            "normal": "な",
+            "shifted": "な"
+        },
+        "D08": {
+            "normal": "に",
+            "shifted": "に"
+        },
+        "D09": {
+            "normal": "ら",
+            "shifted": "ら"
+        },
+        "D10": {
+            "normal": "せ",
+            "shifted": "せ"
+        },
+        "C01": {
+            "normal": "ち",
+            "shifted": "ち"
+        },
+        "C02": {
+            "normal": "と",
+            "shifted": "と"
+        },
+        "C03": {
+            "normal": "し",
+            "shifted": "し"
+        },
+        "C04": {
+            "normal": "は",
+            "shifted": "は"
+        },
+        "C05": {
+            "normal": "き",
+            "shifted": "き"
+        },
+        "C06": {
+            "normal": "く",
+            "shifted": "く"
+        },
+        "C07": {
+            "normal": "ま",
+            "shifted": "ま"
+        },
+        "C08": {
+            "normal": "の",
+            "shifted": "の"
+        },
+        "C09": {
+            "normal": "り",
+            "shifted": "り"
+        },
+        "C10": {
+            "normal": "れ",
+            "shifted": "れ"
+        },
+        "B01": {
+            "normal": "つ",
+            "shifted": "つ"
+        },
+        "B02": {
+            "normal": "さ",
+            "shifted": "さ"
+        },
+        "B03": {
+            "normal": "そ",
+            "shifted": "そ"
+        },
+        "B04": {
+            "normal": "ひ",
+            "shifted": "ひ"
+        },
+        "B05": {
+            "normal": "こ",
+            "shifted": "こ"
+        },
+        "B06": {
+            "normal": "み",
+            "shifted": "み"
+        },
+        "B07": {
+            "normal": "も",
+            "shifted": "も"
+        },
+        "BO8": {
+            "normal": "ね",
+            "shifted": "ね"
+        },
+        "B09": {
+            "normal": "る",
+            "shifted": "る"
+        },
+        "B10": {
+            "normal": "め",
+            "shifted": "め"
+        },
+        "A02": {
+            "normal": ",",
+            "shifted": ","
+        },
+        "A04": {
+            "normal": ".",
+            "shifted": ".",
+            "extended": "# ! , ? - : ' @",
+            "extendedShifted": "# ! , ? - : ' @"
+        }
+    }
+}
