@@ -1,4 +1,5 @@
 module keys
+AbstractKey 1.0 AbstractKey.qml
 ActionKey 1.0 ActionKey.qml
 DropShadow 1.0 DropShadow.qml
 KeyPopover 1.0 KeyPopover.qml
