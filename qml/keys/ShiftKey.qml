@@ -18,17 +18,22 @@ import QtQuick 2.4
 
 import MaliitKeyboard 2.0
 
-ActionKey {
+AbstractKey {
+    label: panel.state == "SYMBOLS" ? "=∆{}" : ""
+    shifted: panel.state == "SYMBOLS" ? "?123" : ""
     iconNormal: "keyboard-caps-disabled-symbolic"
     iconShifted: "keyboard-caps-enabled-symbolic"
     iconCapsLock: "keyboard-caps-locked-symbolic"
 
     action: "shift"
 
-    overridePressArea: true
     acceptDoubleClick: true
 
     property bool doubleClick: false;
+
+    onStateChanged: {
+        setKeyState(state);
+    }
 
     onPressed: {
         if (doubleClick) {
@@ -37,12 +42,12 @@ ActionKey {
         }
         Feedback.keyPressed();
 
-        if (panel.activeKeypadState == "NORMAL")
-            panel.activeKeypadState = "SHIFTED";
-        else if (panel.activeKeypadState == "SHIFTED")
-            panel.activeKeypadState = "NORMAL"
-        else if (panel.activeKeypadState == "CAPSLOCK")
-            panel.activeKeypadState = "NORMAL"
+        if (state == "NORMAL")
+            state = "SHIFTED";
+        else if (state == "SHIFTED")
+            state = "NORMAL"
+        else if (state == "CAPSLOCK")
+            state = "NORMAL"
     }
 
     onPressAndHold: {
@@ -52,7 +57,7 @@ ActionKey {
 
         Feedback.startPressEffect();
 
-        panel.activeKeypadState = "CAPSLOCK"
+        state = "CAPSLOCK"
     }
 
     onDoubleClicked: {
@@ -62,7 +67,7 @@ ActionKey {
 
         Feedback.keyPressed();
 
-        panel.activeKeypadState = "CAPSLOCK"
+        state = "CAPSLOCK"
         doubleClick = true;
     }
 }
