@@ -15,6 +15,7 @@
  */
 
 import QtQuick 2.4
+import MaliitKeyboard 2.0
 
 Item {
     id: keyPadRoot
@@ -22,8 +23,9 @@ Item {
     state: "NORMAL"
 
     property var content: c1
-    property string symbols: "languages/Keyboard_symbols.qml"
-    property bool capsLock: false
+
+    property int keyWidth: 0
+    property int keyHeight: 0
 
     Column {
         id: c1
@@ -44,30 +46,27 @@ Item {
             // a column/row layout
             return content.numberOfRows;
         }
-        return content.children.length;
+        return Keyboard.keyLayout.keys.length;
     }
 
     // we don´t use a QML layout, because we want all keys to be equally sized
     function calculateKeyWidth() {
         var maxNrOfKeys = 0;
-        var width = panel.width;
-        
+
         if (typeof(content.maxNrOfKeys) != 'undefined') {
             maxNrOfKeys = content.maxNrOfKeys;
         } else {
             // Don't look at the final row when calculating size, as this is a special case
             for (var i = 0; i < numberOfRows() - 1; ++i) {
-                if (content.children[i].children.length > maxNrOfKeys)
+                if (content.children && content.children[i].children.length > maxNrOfKeys)
                     maxNrOfKeys = content.children[i].children.length;
             }
         }
 
-        var maxSpaceForKeys = panel.width / maxNrOfKeys;
-
-        panel.keyWidth = maxSpaceForKeys;
+        keyWidth = width / (maxNrOfKeys - 1);
     }
 
     function calculateKeyHeight() {
-        panel.keyHeight = panel.height / numberOfRows();
+        keyHeight = height / numberOfRows();
     }
 }
