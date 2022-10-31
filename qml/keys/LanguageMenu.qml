@@ -24,6 +24,7 @@ import MaliitKeyboard 2.0
 import "languages.js" as Languages
 
 Menu {
+    id: menu
 
     modal: true
 
@@ -45,7 +46,7 @@ Menu {
         text: Gettext.qsTr("Emoji")
         onClicked: {
             keypad.state = "EMOJI";
-            canvas.languageMenu.close();
+            menu.close();
         }
     }
     MenuSeparator {
@@ -55,7 +56,7 @@ Menu {
         text: Gettext.qsTr("Settings") + "…"
         onClicked: {
             Keyboard.showSystemSettings();
-            canvas.languageMenu.close();
+            menu.close();
         }
     }
 }
